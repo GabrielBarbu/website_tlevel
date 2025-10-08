@@ -91,9 +91,61 @@ nav a {
     transition: background-color 0.3s ease;
 }
 
+/* Hamburger Menu Styles */
+.hamburger-menu {
+    display: none; /* Hidden by default on desktop */
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 850px) {
+    header h1 {
+        font-size: 1.8rem; /* Make title smaller on mobile */
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger on mobile */
+    }
+
+    nav ul {
+        display: none; /* Hide the desktop nav links */
+        flex-direction: column;
+        position: absolute;
+        top: 80px; /* Position below the header */
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        box-shadow: var(--box-shadow);
+        padding: 1rem 0;
+    }
+
+    nav ul.nav-active {
+        display: flex; /* Show the nav links when active */
+    }
+
+    nav a {
+        display: block;
+        text-align: center;
+        padding: 1rem;
+        width: 100%;
+    }
+}
+
 /* Style for active and hovered navigation links */
 nav a:hover, nav a.active {
-    background-color: var(--secondary-color);
+    background-color: #3498db; /* Use the lighter blue for hover/active */
 }
 
 /* Main content area styles */

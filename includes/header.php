@@ -16,11 +16,10 @@ $page = basename($_SERVER['PHP_SELF']);
     <div class="header-content">
         <!-- Logo and site title link to the homepage -->
         <a href="<?= session_url('index.php') ?>" class="logo-link">
-            <img src="logo_bg.png" alt="Health Advice Group Logo" class="logo">
+            <img src="logo_no_bg.png" alt="Health Advice Group Logo" class="logo">
             <h1>Health Advice Group</h1>
         </a>
-        <!-- Main navigation -->
-        <nav>
+        <nav id="main-nav">
             <ul>
                 <!-- Standard navigation links -->
                 <li><a href="<?= session_url('index.php') ?>" class="<?= $page == 'index.php' ? 'active' : '' ?>">Home</a></li>
@@ -43,5 +42,10 @@ $page = basename($_SERVER['PHP_SELF']);
                 <?php endif; ?>
             </ul>
         </nav>
+        <button class="hamburger-menu" aria-label="Toggle menu" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
     </div>
 </header>

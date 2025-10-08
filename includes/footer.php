@@ -10,7 +10,7 @@
     <p>&copy; <?php echo date("Y"); ?> Health Advice Group. All rights reserved.</p>
 </footer>
 
-<!-- Include the new accessibility script first -->
-<script src="js/script.js"></script>
+<!-- Include the main JavaScript file with cache busting -->
+<script src="js/script.js?v=<?php echo time(); ?>"></script>
 </body>
 </html>
