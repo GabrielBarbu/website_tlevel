@@ -1,0 +1,418 @@
+/**
+ * Main Stylesheet for the Health Advice Group Website
+ *
+ * This file contains all the primary styles for the website, including
+ * layout, typography, color scheme, and component styling.
+ * It uses CSS custom properties (variables) for easy theme management.
+ */
+
+/* Import Google Fonts for a clean, modern look */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Define color palette and global variables */
+:root {
+    --primary-color: #2c3e50;      /* Dark blue for headers and footers */
+    --secondary-color: #3498db;    /* Bright blue for links and buttons */
+    --background-color: #ecf0f1;   /* Light grey for the page background */
+    --text-color: #34495e;         /* Dark grey for body text */
+    --card-bg-color: #ffffff;      /* White for card backgrounds */
+    --success-color: #2ecc71;      /* Green for success messages */
+    --error-color: #e74c3c;        /* Red for error messages */
+    --border-radius: 8px;          /* Consistent border radius for elements */
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* General body and typography styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Header styles */
+header {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    flex-wrap: wrap; /* Allow wrapping on very small screens */
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 15px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2rem; /* Slightly reduce font size to make more space */
+}
+
+/* Navigation styles */
+nav {
+    flex-shrink: 0; /* Prevent the nav from shrinking */
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Style for active and hovered navigation links */
+nav a:hover, nav a.active {
+    background-color: var(--secondary-color);
+}
+
+/* Main content area styles */
+main {
+    padding: 2rem 1rem;
+    min-height: 80vh; /* Ensure footer stays at the bottom */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card component styles */
+.card {
+    background-color: var(--card-bg-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.card h1, .card h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-top: 0;
+}
+
+/* Form styles */
+.required-note {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 1rem;
+}
+body.high-contrast .required-note {
+    color: #ccc;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form label {
+    font-weight: bold;
+}
+form label .required {
+    color: var(--error-color);
+    margin-left: 4px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form button {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button#get-location {
+    background-color: var(--success-color);
+}
+
+form button#get-location:hover {
+    background-color: #27ae60;
+}
+
+form button:hover {
+    background-color: #2980b9;
+}
+
+/* Results container styles */
+#weather-results, #air-quality-results, #health-advice-results {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #f9f9f9;
+    border-radius: var(--border-radius);
+    border: 1px solid #eee;
+}
+
+#weather-results h2, #air-quality-results h2, #health-advice-results h2 {
+    margin-top: 0;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--primary-color);
+    color: #fff;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+/* Dashboard grid styles */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+.dashboard-card {
+    background-color: var(--card-bg-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.dashboard-card h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+.dashboard-card a {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-card a:hover {
+    background-color: #2980b9;
+}
+
+/* Accessibility helper class */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Health Tracker Page Styles */
+.health-logs-container {
+    max-height: 400px;
+    overflow-y: auto; /* Add scrollbar if content exceeds max height */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    padding: 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* --- Accessibility Settings --- */
+
+/* High Contrast Mode - Using high specificity and !important to ensure styles are applied */
+body.high-contrast {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+/* Apply to all general containers */
+body.high-contrast .card,
+body.high-contrast header,
+body.high-contrast footer,
+body.high-contrast .dashboard .dashboard-card { /* Increased specificity */
+    background-color: #000 !important;
+    color: #fff !important;
+    border: 1px solid #fff !important;
+}
+body.high-contrast .card p,
+body.high-contrast .dashboard-card p { /* Increased specificity */
+    color: #fff !important; /* Ensure paragraph text is visible */
+}
+body.high-contrast a {
+    color: #0ff !important; /* Bright cyan for links */
+}
+body.high-contrast .card h1,
+body.high-contrast .card h2,
+body.high-contrast .logo-link,
+body.high-contrast header h1 {
+    color: #fff !important;
+}
+body.high-contrast form button,
+body.high-contrast .dashboard-card a {
+    background-color: #0ff !important;
+    color: #000 !important;
+}
+body.high-contrast nav a:hover,
+body.high-contrast nav a.active {
+    background-color: #0aa !important;
+}
+body.high-contrast form button:hover,
+body.high-contrast .dashboard-card a:hover {
+    background-color: #0aa !important;
+}
+/* High contrast for form inputs */
+body.high-contrast input,
+body.high-contrast textarea {
+    background-color: #222 !important;
+    color: #fff !important;
+    border: 1px solid #fff !important;
+}
+/* High contrast for API results sections */
+body.high-contrast #weather-results,
+body.high-contrast #air-quality-results,
+body.high-contrast #health-advice-results {
+    background-color: #111 !important;
+    border: 1px solid #fff !important;
+}
+body.high-contrast #weather-results p,
+body.high-contrast #air-quality-results p,
+body.high-contrast #health-advice-results li {
+    color: #fff !important;
+}
+
+
+/* Large Font Size */
+body.large-font {
+    font-size: 1.1em;
+    line-height: 1.65;
+}
+/* Target the dashboard card text specifically to prevent layout breaks */
+body.large-font .dashboard-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+body.large-font h1 {
+    font-size: 2.2rem;
+}
+body.large-font h2 {
+    font-size: 1.8rem;
+}
+
+/* Settings Page Specific Styles */
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+}
+body.high-contrast .setting-item {
+    border-bottom: 1px solid #555;
+}
+.setting-item label {
+    font-weight: bold;
+}
+.setting-item input[type="checkbox"] {
+    transform: scale(1.5); /* Make the checkbox bigger */
+}
+
+/* High Contrast styles for the health log table - now more specific */
+body.high-contrast .health-logs-container table th,
+body.high-contrast .health-logs-container table td {
+    border-bottom: 1px solid #777 !important;
+}
+body.high-contrast .health-logs-container table th {
+    background-color: #222 !important;
+    color: #fff !important;
+}
+body.high-contrast .health-logs-container table tbody tr:hover {
+    background-color: #333 !important;
+}
+
+
+/* Error and Success Message Styles */
+.error {
+    color: var(--error-color);
+    background-color: #fdd;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--error-color);
+    text-align: center;
+}
+
+#form-error:not(:empty) {
+    display: block !important;
+    margin-bottom: 1rem;
+}
+
+.success {
+    color: var(--success-color);
+    background-color: #dfd;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--success-color);
+    text-align: center;
+}

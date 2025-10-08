@@ -1,0 +1,22 @@
+# Environment variables
+# This file contains sensitive API keys and should never be committed to version control.
+.env
+
+# IDE and editor configuration folders
+.vscode/
+.idea/
+
+# Dependency directories for tools like Composer or npm
+vendor/
+node_modules/
+
+# Log files
+*.log
+
+# Operating System generated files
+.DS_Store
+Thumbs.db
+
+# Keys
+key.txt
+key.txt.pub
